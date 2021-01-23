@@ -1,0 +1,22 @@
+{
+  "name": "detect-os-titlebar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KorbsStudio/detect-os-titlebar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KorbsStudio/detect-os-titlebar/issues"
+  },
+  "homepage": "https://github.com/KorbsStudio/detect-os-titlebar#readme",
+  "dependencies": {
+    "electron": "^9.0.5"
+  }
+}
