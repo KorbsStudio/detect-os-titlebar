@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/KorbsStudio/detect-os-titlebar#readme",
   "dependencies": {
-    "electron": "^9.0.5"
+    "electron": "^9.3.1"
   }
 }
