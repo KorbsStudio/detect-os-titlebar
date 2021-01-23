@@ -4,7 +4,7 @@ const path = require('path');
 if (path.sep === "\\") {
     app.whenReady().then(() => {createWindowWin()}) /* If the OS is Windows, it will run "createWindowWin" */
 } else {
-app.whenReady().then(() => {createWindowLinux()}) /* If the OS is Windows, it will run "createWindowLinux" */
+    app.whenReady().then(() => {createWindowLinux()}) /* If the OS is Windows, it will run "createWindowLinux" */
 }
 
 function createWindowWin () {
