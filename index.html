@@ -4,14 +4,25 @@
         <link rel="stylesheet" href="./src/css/style.css">
         <script src="./src/js/titlebar/windows-or-mac.js"></script> <!-- Detecting Windows or macOS -->
         <script src="./src/js/titlebar/linux.js"></script> <!-- Detecting Linux -->
+        <script>require('./renderer.js')</script> <!-- Titlebar controls on Windows -->
     </head>
-    <body>
-        <div data-for-os="windows"  class="titlebar">
-            <div class="buttons">
-                <a><i class="fas fa-window-minimize"></i></a>
-                <a><i class="fas fa-window-maximize"></i></a>
-                <a onClick="window.close()"><i class="fas fa-window-close"></i></a>
+    <header data-for-os="windows" id="titlebar" class="titlebar">
+        <div>
+          <div id="window-controls">
+            <div class="button" id="min-button">
+              <img class="icon" srcset="./src/img/icons/titlebar/min-w-10.png 1x, ./src/img/icons/titlebar/min-w-12.png 1.25x, ./src/img/icons/titlebar/min-w-15.png 1.5x, ./src/img/icons/titlebar/min-w-15.png 1.75x, ./src/img/icons/titlebar/min-w-20.png 2x, ./src/img/icons/titlebar/min-w-20.png 2.25x, ./src/img/icons/titlebar/min-w-24.png 2.5x, ./src/img/icons/titlebar/min-w-30.png 3x, ./src/img/icons/titlebar/min-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="max-button">
+              <img class="icon" srcset="./src/img/icons/titlebar/max-w-10.png 1x, ./src/img/icons/titlebar/max-w-12.png 1.25x, ./src/img/icons/titlebar/max-w-15.png 1.5x, ./src/img/icons/titlebar/max-w-15.png 1.75x, ./src/img/icons/titlebar/max-w-20.png 2x, ./src/img/icons/titlebar/max-w-20.png 2.25x, ./src/img/icons/titlebar/max-w-24.png 2.5x, ./src/img/icons/titlebar/max-w-30.png 3x, ./src/img/icons/titlebar/max-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="restore-button">
+              <img class="icon" srcset="./src/img/icons/titlebar/restore-w-10.png 1x, ./src/img/icons/titlebar/restore-w-12.png 1.25x, ./src/img/icons/titlebar/restore-w-15.png 1.5x, ./src/img/icons/titlebar/restore-w-15.png 1.75x, ./src/img/icons/titlebar/restore-w-20.png 2x, ./src/img/icons/titlebar/restore-w-20.png 2.25x, ./src/img/icons/titlebar/restore-w-24.png 2.5x, ./src/img/icons/titlebar/restore-w-30.png 3x, ./src/img/icons/titlebar/restore-w-30.png 3.5x" draggable="false" />
+            </div>
+            <div class="button" id="close-button">
+              <img class="icon" srcset="./src/img/icons/titlebar/close-w-10.png 1x, ./src/img/icons/titlebar/close-w-12.png 1.25x, ./src/img/icons/titlebar/close-w-15.png 1.5x, ./src/img/icons/titlebar/close-w-15.png 1.75x, ./src/img/icons/titlebar/close-w-20.png 2x, ./src/img/icons/titlebar/close-w-20.png 2.25x, ./src/img/icons/titlebar/close-w-24.png 2.5x, ./src/img/icons/titlebar/close-w-30.png 3x, ./src/img/icons/titlebar/close-w-30.png 3.5x" draggable="false" />
             </div>
         </div>
+      </header>
+    <body>
     </body>
 </html>
