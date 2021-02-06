@@ -10,6 +10,10 @@
                 <a onClick="window.minimize"><i class="fas fa-window-maximize"></i></a>
                 <a onClick="window.close()"><i class="fas fa-window-close"></i></a>
             </div>
+            <div class="content">
+                <p id="win32">You're running this on a Windows operating system.</p>
+                <p id="linux">You're running this on a Linux operating system.</p>
+            </div>
         </div>
     </body>
 </html>
@@ -18,6 +22,15 @@ body {
     background: #191919;
 }
 .linux .titlebar { /* If the OS is detected as Linux, the titlebar will be removed */
+    display: none;
+}
+.linux p#win32 {
+    display: none;
+}
+.linux p#linux {
+    display: initial;
+}
+p#linux {
     display: none;
 }
 .titlebar {
