@@ -1,6 +1,6 @@
 body {background: #191919;}
 .linux #titlebar { /* Hide the custom titlebar if user is using Linux */
-    display: none;
+    display: none !important; 
 }
 html.mac [data-for-os=windows] { /* Hide the custom titlebar if user is using macOS */
     display: none !important
