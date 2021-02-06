@@ -31,12 +31,12 @@ function createWindowMac () {
     width: 800,
     height: 600,
     frame: true,
-    titleBarStyle: hidden-inset,
+    titleBarStyle: 'hiddenInset',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  mainWindow.loadFile('mac.html')
+  mainWindow.loadFile('index.html')
 }
 
 function createWindowLinux () {
