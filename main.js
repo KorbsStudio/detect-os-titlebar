@@ -5,17 +5,13 @@ var osvar = process.platform;
 
 if (osvar == 'darwin') {
     console.log("you are on a mac os");
+    app.whenReady().then(() => {createWindowMac()})
 }else if(osvar == 'win32'){
     console.log("you are on a windows os")
+    app.whenReady().then(() => {createWindowWin()})
 }else{
     console.log("unknown os")
-}
-
-
-if (path.sep === "\\") {
-    app.whenReady().then(() => {createWindowWin()}) /* If the OS is Windows, it will run "createWindowWin" */
-} else {
-    app.whenReady().then(() => {createWindowLinux()}) /* If the OS is Windows, it will run "createWindowLinux" */
+    app.whenReady().then(() => {createWindowLinux()})
 }
 
 function createWindowWin () {
