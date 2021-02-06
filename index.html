@@ -4,7 +4,7 @@
         <script src="https://kit.fontawesome.com/db4a23598f.js"></script>
     </head>
     <body>
-        <div class="titlebar">
+        <div class="titlebar-Windows">
             <div class="buttons">
                 <a onClick="window.maximize"><i class="fas fa-window-minimize"></i></a>
                 <a onClick="window.minimize"><i class="fas fa-window-maximize"></i></a>
@@ -17,13 +17,13 @@
 body {
     background: #191919;
 }
-.linux .titlebar { /* If the OS is detected as Linux, the titlebar will be removed */
+.linux .titlebar-Windows { /* If the OS is detected as Linux, the titlebar will be removed */
     display: none;
 }
 p#linux {
     display: none;
 }
-.titlebar {
+.titlebar-Windows {
     color: white;
     background: black;
     position: fixed;
@@ -45,8 +45,23 @@ if (/\blinux\b/i.test(navigator.userAgent)) { /* Detect if the OS is Linux */
     document.body.className += " linux";
 }
 </script>
-<script>
-if (/\bdarwom\b/i.test(navigator.userAgent)) { /* Detect if the OS is Linux */
-    document.body.className += " linux";
-}
-</script>
+<script> /* Detect if the OS is Windows or macOS */
+    (function() {
+    
+    var htmlElement = document.documentElement;
+    
+    if (navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)) {
+      htmlElement.className = 'mac'
+    } else {
+      htmlElement.className = 'titlebar-Windows'
+    }
+    
+    document.addEventListener('click', function(event) {
+      var target = event.target;
+      if (target.getAttribute && target.getAttribute('data-action') === 'switch-os') {
+        event.preventDefault();
+        htmlElement.className = target.getAttribute('data-os')
+      }
+    })
+    })();
+    </script>
