@@ -53,7 +53,7 @@ function createWindowLinux () { /* Linux */
   })
   mainWindow.loadFile('index.html');
   mainWindow.webContents.on('did-finish-load', function() {
-    mainWindow.webContents.insertCSS('html,body{ background-color: #FF0000 !important;}')
+    mainWindow.webContents.insertCSS('#titlebar{display: none !important;}')
  });
 }
 
