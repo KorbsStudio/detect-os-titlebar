@@ -26,20 +26,6 @@ html.windows [data-for-os=mac] { /* Hide macOS adjustments if user is using Wind
   padding: 0;
 }
 
-#window-title {
-  grid-column: 1;
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
-  overflow: hidden;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 12px;
-}
-
-.maximized #window-title {
-  margin-left: 12px;
-}
-
 #window-title span {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -122,8 +108,4 @@ html.windows [data-for-os=mac] { /* Hide macOS adjustments if user is using Wind
 
 .maximized #max-button {
   display: none;
-}
-
-div#window-controls img {
-  filter: var(--titlebar-img);
 }

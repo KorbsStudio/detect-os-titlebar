@@ -1,3 +1,3 @@
-if (/\blinux\b/i.test(navigator.userAgent)) { /* Detect if the OS is Linux */
-    document.body.className += "linux";
+if (/\blinux\b/i.test(navigator.userAgent)) {
+    document.body.className += " linux";
 }
