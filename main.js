@@ -53,7 +53,7 @@ function createWindowLinux () { /* Linux */
   })
   mainWindow.loadFile('index.html');
   mainWindow.webContents.on('did-finish-load', function() {
-    mainWindow.webContents.insertCSS('#titlebar{display: none !important;}')
+    mainWindow.webContents.insertCSS('#titlebar{display: none !important;}') /* Remove Windows Titlebar if OS is Linux */
  });
 }
 
