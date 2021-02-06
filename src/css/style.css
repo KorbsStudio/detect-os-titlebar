@@ -1,0 +1,31 @@
+body {
+    background: #191919;
+}
+.linux .titlebar { /* Hide the custom titlebar if user is using Linux */
+    display: none;
+}
+p#linux {
+    display: none;
+}
+.titlebar {
+    color: white;
+    background: black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    text-align: right;
+}
+.buttons {
+    padding: 10px;
+}
+.buttons a {
+    padding: 9px;
+}
+html.mac [data-for-os=windows] { /* Hide the custom titlebar if user is using macOS */
+    display: none !important
+}
+html.windows [data-for-os=mac] { /* Hide macOS adjustments if user is using Windows */
+    display: none !important
+}

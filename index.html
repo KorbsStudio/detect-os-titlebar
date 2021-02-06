@@ -1,73 +1,17 @@
 <html>
     <head>
         <title>OS Detect Titlebar</title>
-        <script src="https://kit.fontawesome.com/db4a23598f.js"></script>
+        <link rel="stylesheet" href="/src/css/style.css">
+        <script src="/src/js/titlebar/windows-or-mac.js"></script> <!-- Detecting Windows or macOS -->
+        <script src="/src/js/titlebar/linux.js"></script> <!-- Detecting Linux -->
     </head>
     <body>
         <div data-for-os="windows"  class="titlebar">
             <div class="buttons">
-                <a onClick="window.maximize"><i class="fas fa-window-minimize"></i></a>
-                <a onClick="window.minimize"><i class="fas fa-window-maximize"></i></a>
+                <a><i class="fas fa-window-minimize"></i></a>
+                <a><i class="fas fa-window-maximize"></i></a>
                 <a onClick="window.close()"><i class="fas fa-window-close"></i></a>
             </div>
         </div>
     </body>
 </html>
-<style>
-body {
-    background: #191919;
-}
-.linux .titlebar { /* If the OS is detected as Linux, the titlebar will be removed */
-    display: none;
-}
-p#linux {
-    display: none;
-}
-.titlebar {
-    color: white;
-    background: black;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 40px;
-    text-align: right;
-}
-.buttons {
-    padding: 10px;
-}
-.buttons a {
-    padding: 9px;
-}
-html.mac [data-for-os=windows] {
-    display: none !important
-}
-html.windows [data-for-os=mac] {
-    display: none !important
-}
-</style>
-<script>
-if (/\blinux\b/i.test(navigator.userAgent)) { /* Detect if the OS is Linux */
-    document.body.className += " linux";
-}
-</script>
-<script> /* Detect if the OS is Windows or macOS */
-(function() {
-
-var htmlElement = document.documentElement;
-
-if (navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)) {
-    htmlElement.className = 'mac'
-} else {
-    htmlElement.className = 'windows'
-}
-
-document.addEventListener('click', function(event) {
-    var target = event.target;
-    if (target.getAttribute && target.getAttribute('data-action') === 'switch-os') {
-    event.preventDefault();
-    htmlElement.className = target.getAttribute('data-os')
-    }
-})
-})();
-</script>

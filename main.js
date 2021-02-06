@@ -2,8 +2,7 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path');
 
 var osvar = process.platform;
-
-if (osvar == 'darwin') {
+if (osvar == 'darwin') { /* Detecting OS */
     console.log("you are on a mac os");
     app.whenReady().then(() => {createWindowMac()})
 }else if(osvar == 'win32'){
@@ -14,7 +13,7 @@ if (osvar == 'darwin') {
     app.whenReady().then(() => {createWindowLinux()})
 }
 
-function createWindowWin () {
+function createWindowWin () { /* Windows */
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -25,8 +24,7 @@ function createWindowWin () {
   })
   mainWindow.loadFile('index.html')
 }
-
-function createWindowMac () {
+function createWindowMac () { /* macOS */
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -38,8 +36,7 @@ function createWindowMac () {
   })
   mainWindow.loadFile('index.html')
 }
-
-function createWindowLinux () {
+function createWindowLinux () { /* Linux */
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -51,8 +48,6 @@ function createWindowLinux () {
   })
   mainWindow.loadFile('index.html')
 }
-
-
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
