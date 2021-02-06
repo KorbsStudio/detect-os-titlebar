@@ -51,7 +51,10 @@ function createWindowLinux () { /* Linux */
       nodeIntegration: true
     }
   })
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('index.html');
+  mainWindow.webContents.on('did-finish-load', function() {
+    mainWindow.webContents.insertCSS('html,body{ background-color: #FF0000 !important;}')
+ });
 }
 
 app.on('window-all-closed', function () {
