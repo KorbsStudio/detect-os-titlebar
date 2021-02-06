@@ -18,6 +18,9 @@ function createWindowWin () { /* Windows */
     width: 800,
     height: 600,
     frame: false,
+    closable: true,
+    maximizable: true,
+    minimizable: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -29,6 +32,9 @@ function createWindowMac () { /* macOS */
     width: 800,
     height: 600,
     frame: true,
+    closable: true,
+    maximizable: true,
+    minimizable: true,
     titleBarStyle: 'hiddenInset',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
@@ -41,6 +47,9 @@ function createWindowLinux () { /* Linux */
     width: 800,
     height: 600,
     frame: true,
+    closable: true,
+    maximizable: true,
+    minimizable: true,
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
