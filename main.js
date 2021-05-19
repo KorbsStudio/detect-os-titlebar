@@ -16,7 +16,8 @@ function createWindowWin () { /* Windows */
     minimizable: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   mainWindow.loadFile('index.html')
@@ -32,7 +33,8 @@ function createWindowMac () { /* macOS */
     titleBarStyle: 'hiddenInset',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   mainWindow.loadFile('index.html')
@@ -48,7 +50,8 @@ function createWindowLinux () { /* Linux */
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   mainWindow.loadFile('index.html');

@@ -5,7 +5,6 @@ const win = remote.getCurrentWindow();
 document.onreadystatechange = (event) => {
     if (document.readyState == "complete") {
         handleWindowControls();
-        document.getElementById('electron-ver').innerHTML = `${process.versions.electron}`
     }
 };
 
@@ -20,25 +19,15 @@ function handleWindowControls() {
 
     document.getElementById('max-button').addEventListener("click", event => {
         win.maximize();
+        document.body.classList.add('maximized');
     });
 
     document.getElementById('restore-button').addEventListener("click", event => {
         win.unmaximize();
+        document.body.classList.remove('maximized');
     });
 
     document.getElementById('close-button').addEventListener("click", event => {
         win.close();
     });
-
-    toggleMaxRestoreButtons();
-    win.on('maximize', toggleMaxRestoreButtons);
-    win.on('unmaximize', toggleMaxRestoreButtons);
-
-    function toggleMaxRestoreButtons() {
-        if (win.isMaximized()) {
-            document.body.classList.add('maximized');
-        } else {
-            document.body.classList.remove('maximized');
-        }
-    }
 }
